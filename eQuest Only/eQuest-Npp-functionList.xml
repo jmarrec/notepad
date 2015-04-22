@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+For learning making your language parser, please check the following link:
+http://notepad-plus-plus.org/features/function-list.html
+
+Author: Julien Marrec
+Email: julien.marrec@gmail.com
+Github: https://github.com/jmarrec
+-->
+<NotepadPlus>
+	<functionList>
+		<associationMap>
+		<!-- langID:
+			L_TEXT: 0     L_PHP: 1        L_C: 2        L_CPP: 3       L_CS: 4         L_OBJC: 5
+			L_JAVA: 6     L_RC: 7         L_HTML: 8     L_XML: 9       L_MAKEFILE: 10  L_PASCAL: 11
+			L_BATCH:12    L_INI: 13       L_ASCII: 14   L_USER: 15     L_ASP: 16       L_SQL: 17
+			L_VB: 18      L_JS: 19        L_CSS: 20     L_PERL: 21     L_PYTHON: 22    L_LUA: 23
+			L_TEX: 24     L_FORTRAN: 25   L_BASH: 26    L_FLASH: 27    L_NSIS: 28      L_TCL: 29
+			L_LISP: 30    L_SCHEME: 31    L_ASM: 32     L_DIFF: 33     L_PROPS: 34     L_PS: 35
+			L_RUBY: 36    L_SMALLTALK:37  L_VHDL: 38    L_KIX: 39      L_AU3: 40       L_CAML: 41
+			L_ADA: 42     L_VERILOG: 43   L_MATLAB: 44  L_HASKELL: 45  L_INNO: 46      L_SEARCHRESULT: 47
+			L_CMAKE: 48   L_YAML: 49      L_COBOL 50    L_GUI4CLI: 51  L_D: 52         L_POWERSHELL: 53
+			L_R: 54       L_JSP: 55
+		-->
+        
+        <!-- Just add the following line to the associationMap section of your own functionList.xml file -->
+			<association userDefinedLangName="eQuest" id="equest_full"/>
+			
+		</associationMap>
+        
+		<parsers>
+
+			<!-- Then add the following code to the 'parsers' section of your our functionList.xml file -->
+			
+			<!-- eQuest Full Function List -->
+ 			<parser 
+				id="equest_full" 
+				displayName="eQuest Full Function List">
+
+				<!-- Find The entire Class using a positive lookahead -->
+				<!-- I'm parsing on "$" followed by a white space... So I can include comments in my files as needed -->
+				<classRange			
+					mainExpr="\$ .*?\r\n\r\n.*?(?=\$ )" 
+					displayMode="node" >
+				
+					<!-- Here we return just the Class name -->
+					<className>
+						<!-- Find only the text, using a negative lookahead to exclude multiple white spaces -->
+						<nameExpr expr='\w(\w|-|/| (?! ))+'/>
+					</className>
+					
+					<!-- Here we find the "function" - here it's something that starts a line with '"XXXX" = blabla' -->
+					<function
+						mainExpr='^\".*?\" = [^ ]+'>
+						<functionName>
+							<!-- We already have exactly what we want with the above -->					
+							<funcNameExpr expr=".*"/>
+						</functionName>
+					</function>
+				</classRange>
+				<function 
+					mainExpr="\$.*?\r\n\r\n">
+					<functionName>
+						<!-- Find only the text, using a negative lookahead to exclude multiple white spaces -->
+						<nameExpr expr="\w(\w|-|/| (?! ))+"/>
+					</functionName>
+				</function>
+			</parser>	
+
+			
+		</parsers>
+	</functionList>
+</NotepadPlus>

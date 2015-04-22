@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+For learning making your language parser, please check the following link:
+http://notepad-plus-plus.org/features/function-list.html
+
+Author: Julien Marrec
+Email: julien.marrec@gmail.com
+Github: https://github.com/jmarrec
+-->
+<NotepadPlus>
+	<functionList>
+		<associationMap>
+		<!-- Just add this to the 'associationMap' section of your own fucntionList.xml -->
+			<association userDefinedLangName="EnergyPlus-JM" id="energyplus_class"/>
+			
+		</associationMap>
+        
+		<parsers>
+
+			<!-- Just add this to the 'parsers' section of your own fucntionList.xml -->
+			
+			<!-- E+ Full Nesting of E+ objects within their classes -->
+ 			<parser 
+				id="energyplus_class" 
+				displayName="EnergyPlus IDF Classes"
+				commentExpr="![^-][\w ]+$">
+				
+				<!-- Find The entire Class (from one "!- == ALL OBJECTS..." to another. 
+				We look until we find another !- = and exclude it with (?=) -->
+				<classRange
+					mainExpr="^!-   =.*?(?=^!-   =)" 
+					displayMode="node" >
+				
+					<!-- Here we return just the Class name, here an E+ Object Class -->
+					<className>
+						<nameExpr expr="^(!-   ===========  ALL OBJECTS IN CLASS: )[\w:]+ (===========)" />
+						<nameExpr expr=": [\w:]+ "/>
+						<nameExpr expr=" [\w:]+"/>
+						<nameExpr expr="[\w:]+"/>
+					</className>
+					
+					<!-- Here we find the "function" - here it's an E+ object - Name -->
+					<function
+						mainExpr="(^[\w][^!]+.*?Name)" >
+						<functionName>
+							<!-- We only want to return the "Name" of the object, which is on the second line -->					
+							<funcNameExpr expr="^[\t ]+[\w ]+,"/>
+							<funcNameExpr expr="[\w][\w ]+"/>
+						</functionName>
+					</function>
+				</classRange>
+			</parser>
+			
+
+			
+		</parsers>
+	</functionList>
+</NotepadPlus>
