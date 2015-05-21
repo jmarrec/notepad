@@ -32,6 +32,7 @@ Windows Explorer will open to the folder in which you'll find functionList.xml, 
 
 All functionlist and user-defined languages come in three flavors:
 - **Energyplus and eQuest**: all files are full featured, meaning they include default notepad++ functionList as well, and are ready to simply replace the existing files (preferred for novice users). Just override your local files with those.
+    * It's important to properly download the files. If you just go to the folder and do a right click > save as, it won't work. You have to go to the Raw file and then save. For your convenience, here are direct links to the [functionList.xml](https://raw.githubusercontent.com/jmarrec/notepad/master/eQuest%20and%20EnergyPlus/functionList.xml) and [unserDefineLang.xml](https://raw.githubusercontent.com/jmarrec/notepad/master/eQuest%20and%20EnergyPlus/userDefineLang.xml)
 - **EnergyPlus Only**, and **eQuest Only**: for those flavors, you'll have to copy the relevant sections and paste them in your functionList.xml and userDefinedLang.xml in the correct location (look at the xml tags)
 
 Make sure you do any overwriting and/or save on those files while Notepad++ is closed. 
