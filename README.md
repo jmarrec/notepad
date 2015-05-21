@@ -37,7 +37,8 @@ All functionlist and user-defined languages come in three flavors:
 
 - **EnergyPlus Only**, and **eQuest Only**: for those flavors, you'll have to copy the relevant sections and paste them in your functionList.xml and userDefinedLang.xml in the correct location (look at the xml tags)
 
-**Make sure you do any overwriting and/or save on those files while Notepad++ is closed. **
+
+**Make sure you do any overwriting and/or save on those files while Notepad++ is closed.**
 
 ### Enabling Function List (navigation pane)
 
