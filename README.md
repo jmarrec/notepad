@@ -27,12 +27,12 @@ Use the shortcut [Windows] + R to bring up the run prompt, and type in : *%appda
 
 ![Cmd prompt](Documentation/cmd.jpg)
 
-Windows Explorer will open to the folder in which you'll find functionList.xml and userDefinedLang.xml
+Windows Explorer will open to the folder in which you'll find functionList.xml, userDefinedLang.xml and shortcuts.xml. Those files are loaded by Notepad++ 
 
 
 All functionlist and user-defined languages come in three flavors:
 - **Energyplus and eQuest**: all files are full featured, meaning they include default notepad++ functionList as well, and are ready to simply replace the existing files (preferred for novice users). Just override your local files with those.
-- **EnergyPlus Only**, and **eQuest Only**: for those flavors, you'll have to copy the relevant sections and paste them in your functionList.xml and userDefinedLang.xml
+- **EnergyPlus Only**, and **eQuest Only**: for those flavors, you'll have to copy the relevant sections and paste them in your functionList.xml and userDefinedLang.xml in the correct location (look at the xml tags)
 
 Make sure you do any overwriting and/or save on those files while Notepad++ is closed. 
 
