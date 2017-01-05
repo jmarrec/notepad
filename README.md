@@ -69,7 +69,7 @@ Make sure you save shortcuts.xml while Notepad++ is closed.
 
 3) Note that each time you'll save the file from the IDF editor, the statements will disappear and you'll have to run the macro again.
 
-### New Addition
+### New Addition: Solarized Theme
 
 I added a Solarized theme for EnergyPlus only to the 'eQuest and EnergyPlus\userDefineLang.xml' file. To enable the Solarized theme that ships with notepad++, go to Settings > 'Style Configurator' and pick the 'Solarized' theme.
 
