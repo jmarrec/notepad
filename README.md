@@ -1,6 +1,19 @@
 Notepad++ for eQuest and EnergyPlus
 =======
 
+# This repository is unmaintained
+
+cf [#6 - Repository is unmaintained](https://github.com/jmarrec/notepad/issues/6)
+
+This repository is currently unmaintained and does not work with Notepad++ 8.1.5+. It's been reported in [#4](https://github.com/jmarrec/notepad/issues/4) alongside some apparently simple steps to make it work.
+
+I just haven't used Notepad++ (nor Windows) in more than 7 years, so I just don't have enough time and interest to fix it.
+
+Pull requests, or offer to maintain it are more than welcome.
+
+
+## Goals
+
 I use Notepad++ for energy modeling on a daily basis, with both eQuest and EnergyPlus.
 
 Those two programs have something in common: the input file is text-based, and it's quite long.
